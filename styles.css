@@ -1,0 +1,267 @@
+/* Importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* setting css variables */
+:root{
+    --primary-color:Green;
+    --secondary-color:purple;
+    --tertiary-color:yellow;
+    --test-dark:#212529;
+    --white:#ffffff;
+    --max-width: 2000px;
+    --header-font-1:"Alfa Slab One", serif;
+    --header-font-2:"Bebas Neue", sans-serif;
+}
+
+/* resetting padding and margin and changing box sizing to border box for convenience */
+* {
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Styling and adding padding to container */
+.section__containter{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+/* styling the font to be used in the header section */
+.section__header{
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: var(--header-font-1);
+    color: var(--primary-color);
+    text-align: center;
+    line-height: 3.75rem;
+    text-shadow: 2px 2px var(--secondary-color);
+}
+
+/* making the font for the description section */
+.section__description{
+    font-weight: 500;
+    color: var(--primary-color);
+    line-height: 1.75rem;
+}
+
+/* removing outline and border of button and giving it color and transition speed, along with changing the cursor into a pointer when hovering */
+.btn {
+    padding: 1rem 5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--tertiary-color);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* changing pointer hover effects */
+.btn:hover {
+    background-color: var(--primary-color);
+}
+
+/*setting a flex box for responsiveness */
+img {
+    display: flex;
+    width: 100%;
+}
+
+/* removing the underline from links and makes the transition smoother */
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* setting scroll behavior to smooth */
+html,
+body {
+    height: 100vh;
+    margin: 0;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+/* setting the font to be used in the body */
+body {
+    font-family: "Montserrat", sans-serif;  
+}
+
+.header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url("Assets/fast-food-seamless-pattern-with-vector-line-icons-hamburger-pizza-hot-dog-cheeseburger-restaurant-menu-background-tasty-unhealthy-food_668389-1240.jpg")
+}
+
+/* keeps navigation bar in place and keeps its width, setting a max width and ensuring that the bar will always remain above the other elements */
+nav {
+    position: fixed;
+    width: 100%;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    z-index: 9;
+}
+
+/* adds padding, background color and flex box. It also spaces elements evenly to the edges*/
+.nav__header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+}
+
+.nav__logo img {
+    max-width: 150px;
+}
+
+/* setting font size, color and changes cursor to pointer when hovering ovet element */
+.nav__menu__btn {
+    font-size: 2rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+/* setting the links */
+.nav__links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--primary-color);
+    transition: 0.5s;
+    z-index: -1;
+    transform: translateY(-100%); /* Hides the menu */
+}
+
+/* Makes the menu visible again */
+.nav__links.open {
+    transform: translateY(0);
+}
+
+/* prevents links from wrapping, gives a 0.3 second transition */
+.nav__links a {
+    font-weight: 1000;
+    white-space: nowrap;
+    color: var(--white);
+    transition: 0.3s;
+}
+
+/* link color changes when hovering */
+.nav__links a:hover {
+    color: var(--secondary-color); 
+}
+
+/* contains the header in a grid, adds 2rem gap and hides overflowing items */
+.header__container {
+    display: grid;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+/* limits width and centers image inside container */
+.header__image img {
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+/* sets alignment, font and font color */
+.header__content h2 {
+    max-width: 500px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: var(--header-font-2);
+    color: var(--primary-color);
+    border: 2px dashed var(--primary-color);
+    text-align: center;
+}
+
+/* sets font style, font color and aligns text */
+.header__content h1 {
+    font-size: 6vh;
+    font-weight: 500;
+    font-family: var(--header-font-1);
+    color: var(--primary-color);
+    line-height: 3.5rem;
+    text-align: center;
+    text-shadow: 2px 2px var(--white);
+}
+
+.header__content h1 span {
+    font-size: 4rem;
+}
+
+/* Makes the position static, adds padding and a flexbox, spaces and centers the elements and gives space between them */
+@media (width > 768px) {
+    nav {
+        position: static;
+        padding: 2rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    /* removing padding and makes background transparent in the header section */
+    .nav__header {
+        padding: 0;
+        background-color: transparent;
+    }
+
+
+    .nav__logo img {
+       max-width: 250px; 
+    }
+
+    /* hiding menu button */
+    .nav__menu__btn {
+        display: none;
+    }
+
+    /* makes links static, removes padding, aligns links to right, arranges links horizontally, and setting stacking order */
+    .nav__links {
+        position: static;
+        padding: 0;
+        flex-direction: row;
+        justify-content: flex-end;
+        background-color: transparent;
+        transform: none;
+        z-index: 1;
+    }
+
+    /* setting link color */
+    .nav__links a {
+        color: var(--primary-color);
+    }
+
+/* when hovering over link, color changes */
+    .nav__links a:hover {
+        color: var(--secondary-color);
+    }
+
+    .header__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+
+    .header__content h2 {
+        margin-inline-start: unset;
+    }
+
+    .header__content h1 {
+        text-align: left;
+    }
+}

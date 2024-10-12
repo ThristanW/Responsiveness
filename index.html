@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css">
+    <title>Jonkler House</title>
+</head>
+<body>
+    <!--defining classes (header, nav, menu)-->
+    <header class="header">
+        <nav>
+            <div class="nav__header"> 
+                
+                <!--making logo-->
+                <div class="nav__logo">
+                    <a href="#">
+                        <img 
+                         src="Assets/joker_logo.jpeg" 
+                         alt="logo" 
+                        />
+                    </a>
+                </div>
+                
+                <!--menu buton-->
+            <div class="nav__menu__btn" id="menu-btn">
+                <i class="ri-menu-line"></i>         
+                </div>
+            </div>
+            
+            <!--setting the links for the menu buttons-->
+            <ul class="nav__links" id="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#special">SPECIAL</a></li>
+                <li><a href="#menu">MENU</a></li>
+                <li><a href="#event">EVENTS</a></li>
+                <li><a href="#contact">CONTACT US</a></li>
+            </ul>
+        </nav>
+        
+        <!--setting the header of the webpage as "home", so when the home link is clicked, it moves to the header container (didnt have enough time for other sections)-->
+        <div class="section__container header__container" id="home">
+            
+            <!--content for homepage-->
+            <div class="header__image">
+                <img src="Assets/header_burger.png" alt="header" />
+            </div>
+            <div class="header__content">
+                <h2>GET THE JONKLER BURGER DELUXE NOW</h2>
+                <h1>JONKLER<br /><span>WEEK</h1>
+            </div>
+        </div>
+    </header>
+    
+    <!--trying out javascript animations-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+</body>
+</html>
